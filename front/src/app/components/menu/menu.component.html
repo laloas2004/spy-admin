@@ -1,0 +1,6 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/hits">Hits</a>
+  <a mat-list-item routerLink="/hitmen" *ngIf="currentUser.rol=='2'">Hitmans</a>
+  <a mat-list-item routerLink="/hitmen" *ngIf="currentUser.user_id==1">Hitmans</a>
+  <a mat-list-item routerLink="/logout">Logout</a>
+</mat-nav-list>

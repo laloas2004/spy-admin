@@ -1,0 +1,63 @@
+<div class="container" style="padding-top: 20px;">
+    <div class="row">
+        <div class="col col-12">
+            <a routerLink="/hits">
+                <h3>
+                    <-- Regresar </h3>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-6">
+            <h1>Detail Hit {{hit.id}}</h1>
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+
+                <div class="form-group">
+                    <label for="assignee_txt">The Assignee</label>
+                    <select formControlName="hitman" class="form-control">
+                        <option *ngFor="let assi of assignee_list" [ngValue]="assi.id">
+                            {{ assi.name }}
+                        </option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="assignee_txt">A Brief Description</label>
+                    <input type="text" class="form-control" id="assignee_txt" aria-describedby="" placeholder=""
+                        formControlName="description">
+
+                </div>
+                <div class="form-group">
+                    <label for="assignee_txt">The Target</label>
+                    <input type="text" class="form-control" id="assignee_txt" aria-describedby="" placeholder=""
+                        formControlName="target">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="assignee_txt">Status</label>
+                    <select formControlName="status" class="form-control">
+                        <option *ngFor="let status of status_hit" [ngValue]="status[0]">
+                            {{ status[1] }}
+                        </option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="assignee_txt">Created By</label>
+                    <input type="text" class="form-control" id="assignee_txt" aria-describedby="" placeholder=""
+                        formControlName="createdBy">
+
+                </div>
+
+                <div class="row">
+                    <div class="" style="padding-top: 30px;">
+                        <button type="submit" class="btn btn-primary btn-lg float-right">Update</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

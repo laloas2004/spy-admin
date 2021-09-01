@@ -1,0 +1,55 @@
+<div class="container" style="padding-top: 20px;">
+    <div class="row">
+        <div class="col col-12">
+            <a routerLink="/hitmen">
+                <h3>
+                    <-- Regresar </h3>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-6">
+        <h1>Detail Hitman {{hitman.id}}</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+
+            <div class="form-group">
+                <label for="name_txt">Name</label>
+                <input type="text" class="form-control" id="name_txt" aria-describedby="" placeholder=""
+                    formControlName="name">
+
+            </div>
+            <div class="form-group">
+                <label for="email_txt">Email</label>
+                <input type="email" class="form-control" id="email_txt" aria-describedby="" placeholder=""
+                    formControlName="email">
+
+            </div>
+            <div class="form-group">
+                <label for="description_txt">Description</label>
+                <input type="text" class="form-control" id="description_txt" aria-describedby="" placeholder=""
+                    formControlName="description">
+
+            </div>
+
+            <div class="form-group">
+                <label for="assignee_txt">Status</label>
+                <select formControlName="status" class="form-control">
+                    <option *ngFor="let status of status_hitman" [ngValue]="status[0]">
+                        {{ status[1] }}
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="row">
+                <div class="" style="padding-top: 30px;">
+                    <button type="submit" class="btn btn-primary btn-lg float-right">Update</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

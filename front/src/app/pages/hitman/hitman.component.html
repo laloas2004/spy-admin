@@ -1,0 +1,36 @@
+<div class="container" style="padding-top: 20px;">
+    <div class="row">
+        <div class="col col-12">
+        </div>
+    </div>
+</div>
+
+<div class="container" class="data-table-hits">
+    <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"
+        [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.user.email}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.status_display}}</td>
+                <td>{{item.rol_display}}</td>
+                <td>
+                    <button type="button" class="btn btn-link" (click)="detalle(item)">Detalle</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
